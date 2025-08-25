@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccnfovf2f7wb4"]
+
+[ext_resource type="PackedScene" uid="uid://d1ufpbgpqevqu" path="res://assets/scenes/player.tscn" id="1_n5x6c"]
+
+[node name="Gameplay" type="Node2D" groups=["area_container"]]
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_n5x6c")]
+
+[node name="Area" type="Node2D" parent="." groups=["area_container"]]

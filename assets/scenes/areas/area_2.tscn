@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://de2n70bsuvt8s"]
+
+[ext_resource type="PackedScene" uid="uid://cnf5e7m4dxv0y" path="res://assets/scenes/area functionality/area_template.tscn" id="1_blyc0"]
+[ext_resource type="PackedScene" uid="uid://ckbcj24mcx2t" path="res://assets/scenes/moving_platform_large.tscn" id="2_hgs5c"]
+
+[sub_resource type="Curve2D" id="Curve2D_00rug"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -27, -7.90203, 0, 0, 0, 0, 70, -43.8563)
+}
+point_count = 2
+
+[node name="Area2" instance=ExtResource("1_blyc0")]
+
+[node name="TileMap" parent="." index="0"]
+layer_1/name = "Layer2"
+layer_2/name = "Layer3"
+layer_2/tile_data = PackedInt32Array(-131070, 65536, 0, -65534, 65536, 1, -131069, 65536, 0, -65533, 65536, 1, -131068, 65536, 0, -65532, 65536, 1, -131067, 65536, 0, -65531, 65536, 1, 2, 65536, 5, 3, 65536, 5, 4, 65536, 5, 5, 65536, 5)
+
+[node name="Player" parent="." index="1"]
+position = Vector2(-84, -12)
+
+[node name="MovingPlatformLarge" parent="MovingPlatforms" index="0" instance=ExtResource("2_hgs5c")]
+position = Vector2(-37, 20.1143)
+curve = SubResource("Curve2D_00rug")
+looping = true
+transition = 0
+
+[node name="AreaExit" parent="." index="3"]
+position = Vector2(64, -112)
+
+[node name="EnergyCells" parent="." index="4"]
+position = Vector2(-8, -6)
+
+[node name="Energy1" parent="EnergyCells" index="0"]
+position = Vector2(-11, -30)
+
+[node name="Energy2" parent="EnergyCells" index="1"]
+position = Vector2(48, -82)
+
+[node name="Energy3" parent="EnergyCells" index="2"]
+position = Vector2(7, -47)
+
+[node name="Energy4" parent="EnergyCells" index="3"]
+position = Vector2(24, -65)
